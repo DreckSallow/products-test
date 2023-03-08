@@ -1,3 +1,6 @@
+### Add Routing and Css basic to themes
+- Add routing using `react-router-dom`
+- Add css variables to theme
 
 ### Add scaffolding:
 
