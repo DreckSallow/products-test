@@ -1,0 +1,101 @@
+/*  text styles */
+.text-font {
+  color: hsla(var(--font-color), var(--alpha-color));
+}
+
+.text-accent {
+  color: hsla(var(--accent-color), var(--alpha-color));
+}
+
+/*  background styles */
+.bg {
+  background-color: hsla(var(--back-color), var(--alpha-color));
+}
+
+/* apha color */
+.color-100 {
+  --alpha-color: 1;
+}
+.color-90 {
+  --alpha-color: 0.9;
+}
+.color-70 {
+  --alpha-color: 0.7;
+}
+.color-50 {
+  --alpha-color: 0.5;
+}
+.color-30 {
+  --alpha-color: 0.3;
+}
+
+/* container-full */
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.size-fill {
+  width: 100vw;
+  height: 100vh;
+}
+
+/*  font sizes  */
+
+.fn-600 {
+  font-size: 2.1rem;
+}
+
+.fn-500 {
+  font-size: 1.75rem;
+}
+
+.fn-400 {
+  font-size: 1.5rem;
+}
+
+.fn-300 {
+  font-size: 1.32rem;
+}
+
+.fn-200 {
+  font-size: 1.15rem;
+}
+
+.fn {
+  font-size: 1rem;
+}
+
+.fn-100 {
+  font-size: 0.85rem;
+}
+
+.fn-80 {
+  font-size: 0.625rem;
+}
+
+/*  font weight  */
+
+.wt-bold {
+  font-weight: bold;
+}
+
+.wt-600 {
+  font-weight: 600;
+}
+
+.wt-500 {
+  font-weight: 500;
+}
+
+.wt-300 {
+  font-weight: 300;
+}
+
+.wt-100 {
+  font-weight: 100;
+}
