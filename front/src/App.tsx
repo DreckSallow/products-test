@@ -1,10 +1,21 @@
-import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+	CartDetail,
+	NotFound,
+	ProductDetail,
+	ProductList,
+} from "./pages/index";
 
 const App = () => {
 	return (
-		<div style={{ textAlign: "center" }}>
-			<h1>Front</h1>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<ProductList />} />
+				<Route path="/products/:productId" element={<ProductDetail />} />
+				<Route path="/cart" element={<CartDetail />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+		</BrowserRouter>
 	);
 };
 
