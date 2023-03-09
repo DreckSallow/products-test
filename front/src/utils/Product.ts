@@ -12,4 +12,13 @@ export class ProductModel {
 			return { ...rest, id: _id, image: `http://localhost:5000${rest.image}` };
 		});
 	}
+	static async getProduct(id: string) {
+		const res = await fetch(`http://localhost:5000/api/products/${id}`);
+		const data = (await res.json()) as ProductFetch;
+		return {
+			...data,
+			id: data._id,
+			image: `http://localhost:5000${data.image}`,
+		};
+	}
 }
