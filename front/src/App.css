@@ -43,3 +43,71 @@
   padding: 1em;
   width: calc(100% - 60px);
 }
+
+.CartPage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6em;
+}
+
+.CartPage header {
+  margin-bottom: 1em;
+}
+
+.CartPage .CartProducts {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.CartPage .CartAmount {
+  margin-top: 1em;
+  padding: 0.6em;
+}
+
+.CartPage .coupon {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin-bottom: 1em;
+}
+
+.CartPage .coupon input {
+  background-color: hsla(var(--font-color), 0.06);
+  border-radius: 5px;
+  outline: none;
+  padding: 0.7em;
+}
+
+.CartPage .total-amount {
+  border-top: 3px dashed hsla(var(--font-color), 0.1);
+  display: flex;
+  padding-top: 0.4em;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.CartPage .total-amount button {
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.5em 0;
+}
+.CartPage .total-amount div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+}
+
+@media (min-width: 460px) {
+  .CartPage .CartProducts {
+    align-items: normal;
+  }
+  .CartPage section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1em;
+  }
+}
