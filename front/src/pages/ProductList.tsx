@@ -2,12 +2,14 @@ import { useState, useCallback, FormEvent, useEffect } from "react";
 import { useQuery } from "react-query";
 import { SearchIcon } from "../components/icons/Search";
 import ProductComponent from "../components/Product/Product";
+import { cartActions } from "../store/cart";
 import { useAppStore } from "../store/hooks";
 import { productsDispatch } from "../store/products";
 import { ProductModel } from "../utils/Product";
 
 export default function ProductList() {
 	const [products, dispatch] = useAppStore((s) => s.productsStore.products);
+	const [cartStore] = useAppStore((s) => s.cartStore);
 	const [selectedProducts, setSelectedProducts] = useState(products);
 
 	const { error, isLoading } = useQuery("products", async () => {
@@ -55,12 +57,16 @@ export default function ProductList() {
 					<h2 className="fn-600">No products found :{"("}</h2>
 				)}
 				{selectedProducts.map((p) => {
+					const inCart = cartStore.products[p.id];
 					return (
 						<ProductComponent
 							product={p}
 							key={p.id}
 							max={70}
-							onAddToCart={() => console.log("id: ", p.id)}
+							disabled={p.countInStock <= (inCart ? inCart.count : 0)}
+							onAddToCart={() => {
+								dispatch(cartActions.addProductId(p.id));
+							}}
 						/>
 					);
 				})}

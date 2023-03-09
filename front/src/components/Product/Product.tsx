@@ -7,12 +7,14 @@ interface ProductProps {
 	product: Product;
 	max?: number;
 	onAddToCart: () => void;
+	disabled?: boolean;
 }
 
 export default function ProductComponent({
 	product,
 	onAddToCart,
 	max = 10,
+	disabled = false,
 }: ProductProps) {
 	const summary = useMemo(
 		() => product.description.slice(0, max).concat("..."),
@@ -32,8 +34,11 @@ export default function ProductComponent({
 				<div>
 					<h5 className="fn-100 wt-500">${product.price}</h5>
 					<button
-						className="color-100 bg-accent text-bg fn-100"
-						onClick={onAddToCart}
+						className={`${
+							disabled ? "color-70" : "color-100"
+						} bg-accent text-bg fn-100 `}
+						onClick={() => !disabled && onAddToCart()}
+						disabled={disabled}
 					>
 						Add item to cart
 					</button>

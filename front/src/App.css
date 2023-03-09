@@ -1,3 +1,13 @@
+/* App Component  */
+.CartSyncIcon {
+  display: flex;
+  flex-direction: flex;
+}
+
+/* App Component  */
+
+/*  Pages  */
+
 .ProductsPage {
   padding: 1em 0.5em;
 }

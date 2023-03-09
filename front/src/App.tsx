@@ -1,4 +1,3 @@
-import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import {
@@ -7,34 +6,38 @@ import {
 	ProductDetail,
 	ProductList,
 } from "./pages/index";
-import { store } from "./store";
-import NavBar from "./components/Navs/NavBar";
-import { QueryClientProvider } from "react-query";
-import { QueryClient } from "react-query";
 
-const queryClient = new QueryClient();
+import NavBar from "./components/Navs/NavBar";
+import Cart from "./components/Cart";
+import { useAppDispatch } from "./store/hooks";
+import { useEffect } from "react";
+import { cartActions } from "./store/cart";
+import { LocalData } from "./utils/Constants";
 
 const App = () => {
+	const dispatch = useAppDispatch();
+	useEffect(() => {
+		const cartProducts = localStorage.getItem(LocalData.ProductsInCart);
+		cartProducts && dispatch(cartActions.setProducts(JSON.parse(cartProducts)));
+	}, [dispatch]);
+
 	return (
-		<QueryClientProvider client={queryClient}>
-			<Provider store={store}>
-				<BrowserRouter>
-					<NavBar
-						icon={"Dikson"}
-						routes={[
-							{ url: "/", text: "Products" },
-							{ url: "/cart", text: "Cart" },
-						]}
-					/>
-					<Routes>
-						<Route path="/" element={<ProductList />} />
-						<Route path="/products/:productId" element={<ProductDetail />} />
-						<Route path="/cart" element={<CartDetail />} />
-						<Route path="*" element={<NotFound />} />
-					</Routes>
-				</BrowserRouter>
-			</Provider>
-		</QueryClientProvider>
+		<BrowserRouter>
+			<NavBar
+				icon={"Dikson"}
+				routes={[
+					{ url: "/", text: "Products" },
+					{ url: "/cart", text: "Cart" },
+				]}
+				extra={<Cart className="CartSyncIcon" />}
+			/>
+			<Routes>
+				<Route path="/" element={<ProductList />} />
+				<Route path="/products/:productId" element={<ProductDetail />} />
+				<Route path="/cart" element={<CartDetail />} />
+				<Route path="*" element={<NotFound />} />
+			</Routes>
+		</BrowserRouter>
 	);
 };
 
