@@ -49,6 +49,8 @@
 
 4. And ready, go to: http://localhost:3000/
 
+See Screenshots: [images](/IMAGES.md)
+
 ## Documentation:
 
 ### Env
