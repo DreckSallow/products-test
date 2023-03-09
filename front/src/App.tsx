@@ -32,7 +32,7 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<NavBar
-				icon={"Dikson"}
+				icon="🚀 Shopy"
 				routes={[
 					{ url: "/", text: "Products" },
 					{ url: "/cart", text: "Cart" },
