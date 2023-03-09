@@ -29,7 +29,7 @@ export default function CartProduct({
 				<img src={product.image} alt={product.name} />
 			</div>
 			<div className={`info ${styles["info"]} w-full`}>
-				<Link to={`/products${product.id}`}>
+				<Link to={`/products/${product.id}`}>
 					<h4 className="fn-100 wt-500" title={product.name}>
 						{product.name}
 					</h4>
