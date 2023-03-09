@@ -1,0 +1,35 @@
+.ProductsPage {
+  padding: 1em 0.5em;
+}
+
+.ProductsPage .products-section {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  padding: 1em 0;
+}
+
+.ProductsPage .header span {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.ProductsPage .header .input {
+  align-items: center;
+  background-color: hsla(var(--font-color), 0.03);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.ProductsPage .header .icon {
+  width: 60px;
+}
+
+.ProductsPage .header input {
+  outline: none;
+  padding: 1em;
+  width: calc(100% - 60px);
+}
