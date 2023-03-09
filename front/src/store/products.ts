@@ -1,31 +1,26 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Product } from "../interfaces";
 
 export interface Products {
 	products: Product[];
 }
 
-export const productsSlice = createSlice<Products, {}>({
+const initialState: Products = {
+	products: [],
+};
+
+export const productsSlice = createSlice({
 	name: "products",
-	initialState: {
-		products: [
-			{
-				name: "Dikson",
-				brand: "Dreck",
-				category: "Algo",
-				description: "Dikson product",
-				countInStock: 2,
-				id: "",
-				image: "",
-				numReviews: 2,
-				price: 1,
-				rating: 2,
-			},
-		],
+	initialState,
+	reducers: {
+		setProducts: (state: Products, action: PayloadAction<Product[]>) => {
+			state.products = action.payload;
+		},
 	},
-	reducers: {},
 });
 
-export const actions = {};
+export const productsDispatch = {
+	setProducts: productsSlice.actions.setProducts,
+};
 
 export const productsReducer = productsSlice.reducer;

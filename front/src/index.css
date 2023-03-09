@@ -20,7 +20,7 @@ code {
 
 .first-schema {
   --font-color: 0, 0%, 8%;
-  --back-color: 0, 0%, 98%;
+  --back-color: 0, 0%, 100%;
   --accent-color: 160, 56%, 50%;
   --alpha-color: 1;
 }

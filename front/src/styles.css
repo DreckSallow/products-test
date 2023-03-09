@@ -7,6 +7,10 @@
   color: hsla(var(--accent-color), var(--alpha-color));
 }
 
+.text-bg {
+  color: hsla(var(--back-color), var(--alpha-color));
+}
+
 /*  background styles */
 .bg {
   background-color: hsla(var(--back-color), var(--alpha-color));
@@ -14,6 +18,10 @@
 
 .bg-font {
   background-color: hsla(var(--font-color), var(--alpha-color));
+}
+
+.bg-accent {
+  background-color: hsla(var(--accent-color), var(--alpha-color));
 }
 
 /* apha color */
