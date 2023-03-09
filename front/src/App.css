@@ -1,0 +1,232 @@
+/* App Component  */
+.CartSyncIcon {
+  display: flex;
+  flex-direction: flex;
+}
+/* App Component  */
+
+/* Class that wrapper the pages */
+.Pages {
+  height: 100%;
+  margin-top: 60px;
+  overflow: auto;
+  padding-bottom: 60px;
+}
+
+/*  Pages  */
+
+.ProductsPage {
+  padding: 1em 0.5em;
+}
+
+.ProductsPage .products-section {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  padding: 1em 0;
+}
+
+.ProductsPage .header span {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.ProductsPage .header .input {
+  align-items: center;
+  background-color: hsla(var(--font-color), 0.03);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.ProductsPage .header .icon {
+  width: 60px;
+}
+
+.ProductsPage .header input {
+  outline: none;
+  padding: 1em;
+  width: calc(100% - 60px);
+}
+
+.CartPage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6em;
+}
+
+.CartPage header {
+  margin-bottom: 1em;
+}
+
+.CartPage .CartProducts {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.CartPage .CartAmount {
+  margin-top: 1em;
+  padding: 0.6em;
+}
+
+.CartPage .coupon {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin-bottom: 1em;
+}
+
+.CartPage .coupon input {
+  background-color: hsla(var(--font-color), 0.06);
+  border-radius: 5px;
+  outline: none;
+  padding: 0.7em;
+}
+
+.CartPage .total-amount {
+  border-top: 3px dashed hsla(var(--font-color), 0.1);
+  display: flex;
+  padding-top: 0.4em;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.CartPage .total-amount button {
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.5em 0;
+}
+.CartPage .total-amount div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+}
+
+@media (min-width: 460px) {
+  .CartPage .CartProducts {
+    align-items: normal;
+  }
+  .CartPage section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1em;
+  }
+}
+
+/* Product detail */
+.ProductDetail {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: auto;
+  max-width: 900px;
+  padding: 1em;
+}
+
+.ProductDetail .product-card {
+  align-items: center;
+  border: 1px solid hsla(var(--font-color), 0.08);
+  box-shadow: 1px 11px 24px -15px hsla(var(--font-color), 0.3);
+  -webkit-box-shadow: 1px 11px 24px -15px hsla(var(--font-color), 0.3);
+  -moz-box-shadow: 1px 11px 24px -15px hsla(var(--font-color), 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  padding: 1em;
+}
+
+.ProductDetail .product-img {
+  max-width: 250px;
+}
+
+.ProductDetail .product-card .info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.ProductDetail .product-stock {
+  border-radius: 5px;
+  padding: 0.4em 0.6em;
+}
+
+.ProductDetail .product-add-to-cart {
+  border-radius: 5px;
+  padding: 0.5em 0.7em;
+}
+
+.ProductDetail .product-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ProductDetail .product-actions button {
+  cursor: pointer;
+}
+
+.ProductDetail .product-chips {
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  gap: 1em;
+}
+
+.ProductDetail .info-card-header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 0.4em;
+}
+
+.ProductDetail .product-chips > span {
+  border: 1px solid hsla(var(--font-color), 0.3);
+  border-radius: 5px;
+  padding: 0.3em 0.6em;
+}
+
+.ProductDetail .product-rating {
+  display: flex;
+  flex-direction: row;
+}
+
+.ProductDetail .product-rating span i {
+  background-color: rgb(247, 186, 56);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ProductDetail .product-rating span {
+  --alpha-color: 0.2;
+  aspect-ratio: 1;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  min-width: 25px;
+  position: relative;
+}
+
+@media (min-width: 460px) {
+  .ProductDetail .product-card {
+    flex-direction: row;
+  }
+}

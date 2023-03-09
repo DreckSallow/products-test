@@ -1,0 +1,65 @@
+.CartProduct {
+  max-width: 450px;
+  border: 1px solid hsla(var(--font-color), 0.08);
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  padding: 0.6em;
+  border-radius: 5px;
+  box-shadow: 1px 11px 24px -15px hsla(var(--font-color), 0.3);
+  -webkit-box-shadow: 1px 11px 24px -15px hsla(var(--font-color), 0.3);
+  -moz-box-shadow: 1px 11px 24px -15px hsla(var(--font-color), 0.3);
+}
+
+.img {
+  width: 40%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  width: 60%;
+}
+
+.info h4 {
+  max-height: 70px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.amount {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-top: 5px;
+}
+
+.actions button {
+  aspect-ratio: 1;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 0.3em;
+}
+.actions button:first-child {
+  border: 1px solid hsla(var(--accent-color), var(--alpha-color));
+}
+
+@media (min-width: 460px) {
+  .img {
+    max-width: 250px;
+  }
+  .CartProduct {
+    max-width: 350px;
+  }
+}
