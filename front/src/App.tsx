@@ -39,15 +39,17 @@ const App = () => {
 				]}
 				extra={<Cart className="CartSyncIcon" />}
 			/>
-			<Routes>
-				<Route
-					path="/"
-					element={<ProductList isLoading={isLoading} error={error} />}
-				/>
-				<Route path="/products/:productId" element={<ProductDetail />} />
-				<Route path="/cart" element={<CartDetail />} />
-				<Route path="*" element={<NotFound />} />
-			</Routes>
+			<main className="Pages">
+				<Routes>
+					<Route
+						path="/"
+						element={<ProductList isLoading={isLoading} error={error} />}
+					/>
+					<Route path="/products/:productId" element={<ProductDetail />} />
+					<Route path="/cart" element={<CartDetail />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</main>
 		</BrowserRouter>
 	);
 };
