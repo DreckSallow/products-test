@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useQuery } from "react-query";
 import "./App.css";
 import {
 	CartDetail,
@@ -13,9 +14,16 @@ import { useAppDispatch } from "./store/hooks";
 import { useEffect } from "react";
 import { cartActions } from "./store/cart";
 import { LocalData } from "./utils/Constants";
+import { ProductModel } from "./utils/Product";
+import { productsDispatch } from "./store/products";
 
 const App = () => {
 	const dispatch = useAppDispatch();
+	const { error, isLoading } = useQuery("products", async () => {
+		const data = await ProductModel.getProducts();
+		dispatch(productsDispatch.setProducts(data));
+	});
+
 	useEffect(() => {
 		const cartProducts = localStorage.getItem(LocalData.ProductsInCart);
 		cartProducts && dispatch(cartActions.setProducts(JSON.parse(cartProducts)));
@@ -32,7 +40,10 @@ const App = () => {
 				extra={<Cart className="CartSyncIcon" />}
 			/>
 			<Routes>
-				<Route path="/" element={<ProductList />} />
+				<Route
+					path="/"
+					element={<ProductList isLoading={isLoading} error={error} />}
+				/>
 				<Route path="/products/:productId" element={<ProductDetail />} />
 				<Route path="/cart" element={<CartDetail />} />
 				<Route path="*" element={<NotFound />} />

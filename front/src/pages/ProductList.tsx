@@ -1,21 +1,18 @@
 import { useState, useCallback, FormEvent, useEffect } from "react";
-import { useQuery } from "react-query";
 import { SearchIcon } from "../components/icons/Search";
 import ProductComponent from "../components/Product/Product";
 import { cartActions } from "../store/cart";
 import { useAppStore } from "../store/hooks";
-import { productsDispatch } from "../store/products";
-import { ProductModel } from "../utils/Product";
 
-export default function ProductList() {
+interface ProductProps {
+	isLoading: boolean;
+	error?: unknown;
+}
+
+export default function ProductList({ isLoading, error }: ProductProps) {
 	const [products, dispatch] = useAppStore((s) => s.productsStore.products);
 	const [cartStore] = useAppStore((s) => s.cartStore);
 	const [selectedProducts, setSelectedProducts] = useState(products);
-
-	const { error, isLoading } = useQuery("products", async () => {
-		const data = await ProductModel.getProducts();
-		dispatch(productsDispatch.setProducts(data));
-	});
 
 	useEffect(() => {
 		setSelectedProducts(products);
